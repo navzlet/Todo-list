@@ -10,7 +10,14 @@ export function Todo() {
         <button>выполненные</button>
         <button>активные</button>
       </div>
-      <div className="todo__createTodo"></div>
+      <div className="todo__createTodo">
+        <input
+          className="todo__createTodo_input"
+          type="text"
+          placeholder="Создать новую задачу..."
+        />
+      </div>
+      <div className="todo__tasks"></div>
     </div>
   );
 }
