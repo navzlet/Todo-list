@@ -62,7 +62,7 @@ button {
   margin-bottom: 8px;
   background-color: #25273c;
   width: 800px;
-  height: 64px;
+  min-height: 64px;
 }
 
 .task__check {
@@ -71,6 +71,7 @@ button {
 }
 
 .task__text {
+  max-width: 650px;
   color: #ffffff;
   font-size: 20px;
 }
