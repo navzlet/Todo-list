@@ -1,0 +1,24 @@
+.todo {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  background-color: red;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  outline: none;
+  &:hover {
+    background-color: gray;
+  }
+  &:active {
+    background-color: beige;
+  }
+}
+
+.todo__createTodo {
+  background-color: #25273c;
+  width: 800px;
+  height: 64px;
+}
