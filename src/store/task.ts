@@ -8,14 +8,9 @@ type todo = {
 
 class Task {
   todos: todo[] = [];
-  todosFilter: todo[] = [];
   
   constructor(){
     makeAutoObservable(this)
-  }
-  
-  completedTodos(){
-    this.todosFilter = this.todos.filter((t)=>t.completed === true)
   }
   
   addTodo(todo : todo){
