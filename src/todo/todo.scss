@@ -15,16 +15,18 @@
   align-self: flex-end;
 }
 
+.todo__filters_active {
+  color: #4d7eea;
+}
+
 button {
   color: #ffffff;
   background: none;
   border: none;
   outline: none;
-  &:hover {
-    color: rgb(210, 210, 210);
-  }
+
   &:active {
-    color: rgb(124, 125, 177);
+    color: #3b64be;
   }
 }
 

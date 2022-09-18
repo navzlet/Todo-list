@@ -10,21 +10,40 @@ import todo from "../store/task";
 export const Todo = observer((): JSX.Element => {
   const [newTask, setNewTask] = useState("");
   const [showTodo, setShowTodo] = useState(todo.todos);
+  const [activeFilter, setActiveFilter] = useState("all");
 
   return (
     <div className="todo">
       <div className="todo__header">TODO</div>
       <div className="todo__filters">
-        <button onClick={() => setShowTodo(todo.todos)}>все задачи</button>
         <button
+          className={
+            activeFilter === "all" ? "todo__filters_active" : undefined
+          }
           onClick={() => {
+            setActiveFilter("all");
+            setShowTodo(todo.todos);
+          }}
+        >
+          все задачи
+        </button>
+        <button
+          className={
+            activeFilter === "completed" ? "todo__filters_active" : undefined
+          }
+          onClick={() => {
+            setActiveFilter("completed");
             setShowTodo(todo.todos.filter((t) => t.completed === true));
           }}
         >
           выполненные
         </button>
         <button
+          className={
+            activeFilter === "active  " ? "todo__filters_active" : undefined
+          }
           onClick={() => {
+            setActiveFilter("active");
             setShowTodo(todo.todos.filter((t) => t.completed === false));
           }}
         >
