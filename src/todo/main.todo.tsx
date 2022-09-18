@@ -5,19 +5,31 @@ import { DeleteIcon } from "../icons/deleteIcon.jsx";
 import { CheckEmptyIcon } from "../icons/checkEmptyIcon";
 import { CheckFilledIcon } from "../icons/checkFilledIcon";
 import { observer } from "mobx-react-lite";
-
 import todo from "../store/task";
 
 export const Todo = observer((): JSX.Element => {
   const [newTask, setNewTask] = useState("");
+  const [showTodo, setShowTodo] = useState(todo.todos);
 
   return (
     <div className="todo">
       <div className="todo__header">TODO</div>
       <div className="todo__filters">
-        <button>все задачи</button>
-        <button>выполненные</button>
-        <button>активные</button>
+        <button onClick={() => setShowTodo(todo.todos)}>все задачи</button>
+        <button
+          onClick={() => {
+            setShowTodo(todo.todos.filter((t) => t.completed === true));
+          }}
+        >
+          выполненные
+        </button>
+        <button
+          onClick={() => {
+            setShowTodo(todo.todos.filter((t) => t.completed === false));
+          }}
+        >
+          активные
+        </button>
       </div>
       <div className="todo__createTodo">
         <input
@@ -28,13 +40,17 @@ export const Todo = observer((): JSX.Element => {
         />
         <PlusIcon
           onClick={() =>
-            todo.addTodo({ id: 4, title: newTask, completed: false })
+            todo.addTodo({
+              id: Math.random(),
+              title: newTask,
+              completed: false,
+            })
           }
           className="todo__createTodo_icon"
         />
       </div>
       <div className="tasks">
-        {todo.todos.map((t) => (
+        {showTodo.map((t) => (
           <div className="task" key={t.id}>
             <div onClick={() => todo.completeTodo(t)}>
               {t.completed ? (
@@ -52,6 +68,7 @@ export const Todo = observer((): JSX.Element => {
               className="task__delete"
               onClick={() => {
                 todo.removeTodo(t.id);
+                setShowTodo(todo.todos);
               }}
             >
               <DeleteIcon />
