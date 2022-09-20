@@ -2,7 +2,7 @@
   padding: 15px;
   display: flex;
   align-items: center;
-  width: 800px;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -83,6 +83,8 @@ button {
 
 .task__text {
   word-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
   max-width: 650px;
   color: #ffffff;
   font-size: 20px;
