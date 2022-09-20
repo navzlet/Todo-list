@@ -40,7 +40,7 @@ export const Todo = observer((): JSX.Element => {
         </button>
         <button
           className={
-            activeFilter === "active  " ? "todo__filters_active" : undefined
+            activeFilter === "active" ? "todo__filters_active" : undefined
           }
           onClick={() => {
             setActiveFilter("active");
@@ -58,13 +58,14 @@ export const Todo = observer((): JSX.Element => {
           onChange={(e: any) => setNewTask(e.target.value)}
         />
         <PlusIcon
-          onClick={() =>
+          onClick={() => {
+            setShowTodo(todo.todos);
             todo.addTodo({
               id: Math.random(),
               title: newTask,
               completed: false,
-            })
-          }
+            });
+          }}
           className="todo__createTodo_icon"
         />
       </div>
