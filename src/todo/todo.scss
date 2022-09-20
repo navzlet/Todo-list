@@ -1,4 +1,5 @@
 .todo {
+  padding: 15px;
   display: flex;
   align-items: center;
   width: 800px;
@@ -35,13 +36,15 @@ button {
   padding-right: 20px;
   margin-top: 10px;
   margin-bottom: 24px;
+  width: 100%;
+  min-width: 290px;
+  max-width: 800px;
+  min-height: 64px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #25273c;
-  width: 800px;
-  height: 64px;
-  border-radius: 8px;
 }
 
 .todo__createTodo_input {
@@ -54,7 +57,9 @@ button {
     color: #7c7c7c;
   }
 }
-
+.tasks {
+  width: 100%;
+}
 .task {
   border-radius: 8px;
   display: flex;
@@ -62,7 +67,7 @@ button {
 
   margin-bottom: 8px;
   background-color: #25273c;
-  width: 800px;
+  width: 100%;
   min-height: 64px;
 }
 
@@ -72,12 +77,15 @@ button {
 }
 
 .task__text {
+  word-wrap: break-word;
   max-width: 650px;
   color: #ffffff;
   font-size: 20px;
 }
 
 .task__text_completed {
+  word-wrap: break-word;
+  max-width: 650px;
   color: #7c7c7c;
   font-size: 20px;
   text-decoration: line-through;
