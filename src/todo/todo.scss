@@ -2,7 +2,7 @@
   padding: 15px;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 800px;
   flex-direction: column;
 }
 
@@ -97,6 +97,7 @@ button {
 
 .task__text_completed {
   word-wrap: break-word;
+  word-break: break-all;
   max-width: 650px;
   color: #7c7c7c;
   font-size: 20px;
