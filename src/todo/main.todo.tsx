@@ -60,6 +60,7 @@ export const Todo = observer((): JSX.Element => {
         <PlusIcon
           onClick={() => {
             setShowTodo(todo.todos);
+            setActiveFilter("all");
             todo.addTodo({
               id: Math.random(),
               title: newTask,
